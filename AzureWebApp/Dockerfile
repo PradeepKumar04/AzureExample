@@ -7,8 +7,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
-#COPY ["AzureWebApp/AzureWebApp.csproj", "AzureWebApp/"]
-#COPY ["AzureWebApp.csproj", "AzureWebApp/"]
+COPY ["AzureWebApp/AzureWebApp.csproj", "AzureWebApp/"]
+COPY ["AzureWebApp.csproj", "AzureWebApp/"]
 COPY ["src/AzureWebApp/AzureWebApp.csproj", "AzureWebApp/"]
 RUN dotnet restore "AzureWebApp/AzureWebApp.csproj"
 COPY . .
